@@ -1,5 +1,6 @@
 package com.mayouf.books.di
 
+import com.mayouf.books.data.remote.network.BooksApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
