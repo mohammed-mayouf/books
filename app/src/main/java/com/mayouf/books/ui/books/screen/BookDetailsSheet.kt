@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
 import com.mayouf.books.domain.model.Book
@@ -14,23 +15,21 @@ fun BookDetailsSheet(book: Book) {
         modifier = Modifier
             .fillMaxWidth()
             .padding(16.dp)
+            .testTag("BookDetailsSheet")
     ) {
         Text(text = book.title)
-
         Spacer(modifier = Modifier.height(8.dp))
-
         Text(text = book.authors.joinToString(", "))
-
         Spacer(modifier = Modifier.height(16.dp))
-
         book.coverId?.let { coverId ->
             val coverUrl = "https://covers.openlibrary.org/b/id/${coverId}-M.jpg"
             AsyncImage(
                 model = coverUrl,
-                contentDescription = null,
+                contentDescription = "Cover image for ${book.title}",
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(300.dp)
+                    .height(250.dp)
+                    .testTag("BookCoverImage_${book.title}")
             )
         }
     }

@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 import com.mayouf.books.domain.model.Book
 
@@ -16,8 +17,9 @@ fun BookItemRow(
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .clickable(onClick = onClick)
+            .clickable { onClick() }
             .padding(16.dp)
+            .testTag("BookItemRow_Test_${book.title}")
     ) {
         Column {
             Text(text = book.title)
