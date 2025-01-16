@@ -57,3 +57,11 @@ The project follows a layered architecture:
    ```bash
    git clone https://github.com/mohammed-mayouf/books.git
    cd books
+
+## Future Improvements
+
+- Enhance UI animations, themes, and overall UX.
+- Add search functionality, pagination, and more detailed book info.
+- Improve offline caching and error handling (custom error classes for reusability).
+- Integrate CI/CD and code coverage tools.
+  
