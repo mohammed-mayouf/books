@@ -34,12 +34,10 @@ class BooksRepositoryImpl @Inject constructor(
     private fun refreshFromRemote(query: String): Completable {
         return booksApi.searchBooks(query)
             .map { response ->
-                response.docs?.map { dto -> dto.toDomain() }.orEmpty()
+                response.docs?.map { dto -> dto.toDomain() }.orEmpty().map { it.toEntity() }
             }
-            .doOnSuccess { domainBooks ->
-                val entities = domainBooks.map { it.toEntity() }
-                booksDao.insertAll(entities)
+            .flatMapCompletable { entities ->
+                Completable.fromAction { booksDao.insertAll(entities) }
             }
-            .ignoreElement()
     }
 }

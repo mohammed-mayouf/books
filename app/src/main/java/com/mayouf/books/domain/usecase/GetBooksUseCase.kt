@@ -5,7 +5,7 @@ import com.mayouf.books.domain.repo.BooksRepository
 import io.reactivex.rxjava3.core.Single
 import javax.inject.Inject
 
-class GetBooksUseCase @Inject constructor(
+open class GetBooksUseCase @Inject constructor(
     private val repository: BooksRepository
 ) {
     operator fun invoke(query: String): Single<List<Book>> {

@@ -2,6 +2,8 @@
 adapterRxjava3 = "2.9.0"
 agp = "8.4.1"
 coilNetworkOkhttp = "3.0.4"
+hiltAndroidTesting = "2.44"
+hiltCompiler = "2.44"
 kotlin = "1.9.0"
 coreKtx = "1.15.0"
 junit = "4.13.2"
@@ -12,20 +14,28 @@ activityCompose = "1.9.3"
 composeBom = "2023.08.00"
 hilt = "2.50"
 ksp = "1.9.0-1.0.13"
+mockitoCore = "5.3.1"
+mockitoInline = "4.5.1"
+mockitoKotlin = "5.1.0"
 navigationCompose = "2.8.5"
+robolectric = "4.10.3"
 room = "2.5.2"
 retrofit = "2.9.0"
 roomRxjava3 = "2.6.1"
 rxJava = "3.1.5"
 rxAndroid = "3.0.2"
+coreKtxVersion = "1.6.1"
 
 [libraries]
 adapter-rxjava3 = { module = "com.squareup.retrofit2:adapter-rxjava3", version.ref = "adapterRxjava3" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigationCompose" }
 androidx-room-rxjava3 = { module = "androidx.room:room-rxjava3", version.ref = "roomRxjava3" }
+androidx-room-testing = { module = "androidx.room:room-testing", version.ref = "roomRxjava3" }
 coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coilNetworkOkhttp" }
 coil-network-okhttp = { module = "io.coil-kt.coil3:coil-network-okhttp", version.ref = "coilNetworkOkhttp" }
+hilt-compiler-v244 = { module = "com.google.dagger:hilt-compiler", version.ref = "hiltCompiler" }
+hilt-android-testing = { module = "com.google.dagger:hilt-android-testing", version.ref = "hiltAndroidTesting" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -45,6 +55,10 @@ hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref
 hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
 
 # Room
+mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockitoCore" }
+mockito-inline = { module = "org.mockito:mockito-inline", version.ref = "mockitoInline" }
+mockito-kotlin = { module = "org.mockito.kotlin:mockito-kotlin", version.ref = "mockitoKotlin" }
+robolectric = { module = "org.robolectric:robolectric", version.ref = "robolectric" }
 room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
 room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
 room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
@@ -56,6 +70,9 @@ retrofit-gson = { group = "com.squareup.retrofit2", name = "converter-gson", ver
 # RxJava
 rxjava = { group = "io.reactivex.rxjava3", name = "rxjava", version.ref = "rxJava" }
 rxandroid = { group = "io.reactivex.rxjava3", name = "rxandroid", version.ref = "rxAndroid" }
+core-ktx = { group = "androidx.test", name = "core-ktx", version.ref = "coreKtxVersion" }
+ui-test-junit4 = { module = "androidx.compose.ui:ui-test-junit4" }
+ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
