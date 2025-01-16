@@ -1,5 +1,7 @@
 [versions]
+adapterRxjava3 = "2.9.0"
 agp = "8.4.1"
+coilNetworkOkhttp = "3.0.4"
 kotlin = "1.9.0"
 coreKtx = "1.15.0"
 junit = "4.13.2"
@@ -8,15 +10,22 @@ espressoCore = "3.6.1"
 lifecycleRuntimeKtx = "2.8.7"
 activityCompose = "1.9.3"
 composeBom = "2023.08.00"
-hilt = "2.44"
+hilt = "2.50"
 ksp = "1.9.0-1.0.13"
+navigationCompose = "2.8.5"
 room = "2.5.2"
 retrofit = "2.9.0"
+roomRxjava3 = "2.6.1"
 rxJava = "3.1.5"
 rxAndroid = "3.0.2"
 
 [libraries]
+adapter-rxjava3 = { module = "com.squareup.retrofit2:adapter-rxjava3", version.ref = "adapterRxjava3" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigationCompose" }
+androidx-room-rxjava3 = { module = "androidx.room:room-rxjava3", version.ref = "roomRxjava3" }
+coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coilNetworkOkhttp" }
+coil-network-okhttp = { module = "io.coil-kt.coil3:coil-network-okhttp", version.ref = "coilNetworkOkhttp" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -51,6 +60,6 @@ rxandroid = { group = "io.reactivex.rxjava3", name = "rxandroid", version.ref = 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 

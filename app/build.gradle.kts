@@ -7,12 +7,12 @@ plugins {
 
 android {
     namespace = "com.mayouf.books"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.mayouf.books"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -54,6 +54,16 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+    configurations.all {
+        resolutionStrategy {
+            // Force a version that has canonicalName()
+            // 1.13.0 is a common version known to have it
+            force("com.squareup:javapoet:1.13.0")
+        }
+    }
+}
+hilt {
+    enableAggregatingTask = false
 }
 
 dependencies {
@@ -71,13 +81,21 @@ dependencies {
 
     implementation(libs.retrofit)
     implementation(libs.retrofit.gson)
+    implementation(libs.adapter.rxjava3)
+
 
     implementation(libs.room.runtime)
     implementation(libs.room.ktx)
     ksp(libs.room.compiler)
+    implementation(libs.androidx.room.rxjava3)
+
 
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
+
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.coil.compose)
+    implementation(libs.coil.network.okhttp)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
