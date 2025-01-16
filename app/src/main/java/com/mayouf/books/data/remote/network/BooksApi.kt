@@ -8,6 +8,8 @@ import retrofit2.http.Query
 interface BooksApi {
     @GET("search.json")
     fun searchBooks(
-        @Query("q") query: String
+        @Query("q") query: String,
+        @Query("fields") fields: String = "title,author_name,cover_i",
+        @Query("limit") limit: Int = 10
     ): Single<SearchResponse>
 }

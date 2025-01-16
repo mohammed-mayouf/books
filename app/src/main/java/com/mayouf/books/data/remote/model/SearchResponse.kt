@@ -3,5 +3,8 @@ package com.mayouf.books.data.remote.model
 import com.google.gson.annotations.SerializedName
 
 data class SearchResponse(
-    @SerializedName("docs") val docs: List<BooksDTO>?
+    @SerializedName("numFound")
+    val numFound: Int?,
+    @SerializedName("docs")
+    val docs: List<BooksDTO>?
 )
